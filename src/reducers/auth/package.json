@@ -1,0 +1,4 @@
+{
+  "name": "Authentication Redux Module",
+  "main": "./auth"
+}
