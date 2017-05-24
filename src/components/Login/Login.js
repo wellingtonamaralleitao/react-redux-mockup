@@ -23,12 +23,20 @@ class Login extends Component {
             SignUp
           </button>
         </p>
+        <div>
+          {
+            this.props.auth.user &&
+              <span>
+                <p>Olá</p>
+                {this.props.auth.user}
+              </span>
+          }
+        </div>
       </div>
-    );
+    )
   }
 
   signIn() {
-    console.log('signin executing...')
     this.props.login('wellynton.amaral', '123456')
   }
 

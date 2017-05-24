@@ -16,7 +16,7 @@ export const initialState = {
 }
 
 export default (state = initialState, action) => {
-  console.log(action)
+  console.log('reducer', action)
   switch (action.type) {
     case types.SIGNUP_REQUEST:
     case types.LOGIN_REQUEST:
@@ -31,7 +31,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        user: action.email
+        user: action.user
       }
 
     case types.SIGNUP_FAILURE:
@@ -54,7 +54,7 @@ export default (state = initialState, action) => {
 }
 
 export const actions = {
-  signup: (email, password) => ({ type: types.SIGNUP_REQUEST, email, password }),
-  login: (email, password) => ({ type: types.LOGIN_REQUEST, email, password }),
+  signup: (email, password) => ({ type: types.SIGNUP_REQUEST, payload: { email, password }}),
+  login: (email, password) => ({ type: types.LOGIN_REQUEST, payload: { email, password }}),
   logout: () => ({ type: types.LOGOUT })
 }
